@@ -1,8 +1,8 @@
-node {
-    /* Requires the Docker Pipeline plugin to be installed */
-    docker.image('node:7-alpine').inside {
-        stage('Test') {
-            sh 'node --version'
+node('docker') {
+    checkout scm
+    stage('Build') {
+        docker.image('python:3.5.1').inside {
+            sh 'python --version'
         }
     }
 }
