@@ -1,6 +1,8 @@
-node('docker') {
-    checkout scm
-    stage('Build') {
-        println("Hello-World!")
+pipeline {
+    agent any
+    stages {
+        stage('build') {
+            println("Hello-World!")
+        }
     }
 }
